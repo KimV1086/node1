@@ -16,12 +16,14 @@ const Vigenere = require('caesar-salad').Vigenere;
 const password = "admin";
 
 app.get('/encode/:pass', (req, res) => {
-    let pass = Vigenere.Cipher(password).crypt(req.params.pass);
+    let code = req.params.pass;
+    let pass = Vigenere.Cipher(password).crypt(code);
     res.send(pass);
 });
 
 app.get('/decode/:pass', (req, res) => {
-    let pass = Vigenere.Decipher(password).crypt(req.params.pass);
+    let code = req.params.pass;
+    let pass = Vigenere.Decipher(password).crypt(code);
     res.send(pass);
 });
 
