@@ -1,12 +1,12 @@
 const express = require('express');
 
 const app = express();
-const port = 8000;
+const port = 3000;
 
 // task1
 
-app.get('/:name', (req, res) => {
-    res.send(req.params.name);
+app.get('/:echo', (req, res) => {
+    res.send(req.params.echo);
 });
 
 // task2
